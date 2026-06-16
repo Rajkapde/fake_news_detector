@@ -19,7 +19,7 @@ from nltk.stem import PorterStemmer
 
 # Build absolute path to ml/ folder
 # This works regardless of where FastAPI is run from
-BASE_DIR = os.path.dirname(os.path.abspath(_file_))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ML_DIR = os.path.join(BASE_DIR, '..', '..', 'ml')
 
 MODEL_PATH = os.path.join(ML_DIR, 'model.pkl')
