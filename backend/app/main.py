@@ -1,5 +1,4 @@
 # ── main.py ──────────────────────────────────────────────
-print("🚀 FastAPI app starting...")
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
@@ -31,7 +30,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ── Register routers ──────────────────────────────────────
+# ── Register routers ──────────────────────────────────────app.add_middleware(
 # This connects your route files to the main app
 app.include_router(predict.router)
 app.include_router(history.router)
@@ -43,4 +42,3 @@ def health_check():
         "status": "running",
         "message": "Fake News Detector API is live!"
     }
-#print("FastAPI starting...")
