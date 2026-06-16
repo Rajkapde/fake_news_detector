@@ -21,6 +21,7 @@ load_dotenv()
 # Step 2: Read the database URL from .env
 # Format: postgresql://username:password@host:port/database_name
 DATABASE_URL = os.getenv("DATABASE_URL")
+print("DATABASE_URL =", DATABASE_URL)
 
 # Step 3: Create the engine
 # Engine = the actual connection pool to PostgreSQL
