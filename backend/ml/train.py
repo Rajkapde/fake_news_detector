@@ -32,8 +32,8 @@ nltk.download('punkt', quiet=True)
 # ── Step 2: Load the dataset ──────────────────────────────
 print("Loading dataset...")
 
-fake = pd.read_csv('ml/data/Fake.csv')
-real = pd.read_csv('ml/data/True.csv')
+fake = pd.read_csv('data/Fake.csv')
+real = pd.read_csv('data/True.csv')
 
 # Add label column
 # 1 = Fake, 0 = Real
@@ -159,8 +159,8 @@ print(f"\nBest model: {best_name} ({best_accuracy:.2%} accuracy)")
 print("\nSaving model and vectorizer...")
 
 # Create ml/ directory path
-model_path = 'ml/model.pkl'
-vectorizer_path = 'ml/vectorizer.pkl'
+model_path = 'model.pkl'
+vectorizer_path = 'vectorizer.pkl'
 
 joblib.dump(best_model, model_path)
 joblib.dump(vectorizer, vectorizer_path)
