@@ -16,7 +16,7 @@ MODEL_PATH = os.path.join(ML_DIR, 'model.pkl')
 VECTORIZER_PATH = os.path.join(ML_DIR, 'vectorizer.pkl')
 
 # ── Load model and vectorizer once at startup ────────────
-
+print("Starting predictor....")
 try:
     print("Loading model...")
     model = joblib.load(MODEL_PATH)
@@ -37,12 +37,9 @@ except FileNotFoundError:
 stemmer = PorterStemmer()
 
 try:
-    stop_words = set(stopwords.words('english'))
-except LookupError:
-    print("Downloading NLTK stopwords...")
-    nltk.download('stopwords')
-    stop_words = set(stopwords.words('english'))
-
+    stop_words = set(stopwords.words("english"))
+except:
+    stop_words = set()
 # ── Text Cleaning ────────────────────────────────────────
 
 def clean_text(text: str) -> str:

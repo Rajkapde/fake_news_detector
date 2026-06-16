@@ -26,7 +26,7 @@ from sklearn.metrics import accuracy_score, classification_report
 # stopwords → common words to ignore ("the", "is", "a")
 # punkt     → sentence tokenizer
 print("Downloading NLTK data...")
-nltk.download('stopwords', quiet=True)
+#nltk.download('stopwords', quiet=True)
 nltk.download('punkt', quiet=True)
 
 # ── Step 2: Load the dataset ──────────────────────────────
