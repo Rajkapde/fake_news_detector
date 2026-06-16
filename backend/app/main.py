@@ -1,4 +1,5 @@
 # ── main.py ──────────────────────────────────────────────
+print("🚀 FastAPI app starting...")
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine, Base
@@ -42,3 +43,4 @@ def health_check():
         "status": "running",
         "message": "Fake News Detector API is live!"
     }
+#print("FastAPI starting...")
