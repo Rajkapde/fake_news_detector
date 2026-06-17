@@ -103,9 +103,10 @@ print(f"Testing set:  {len(X_test)} articles")
 # max_features=5000 → track top 5000 most important words
 # ngram_range=(1,2) → use single words AND word pairs
 #   example: "fake" + "news" together is more powerful than alone
+# To this (smaller = less memory):
 vectorizer = TfidfVectorizer(
-    max_features=5000,
-    ngram_range=(1, 2),
+    max_features=3000,
+    ngram_range=(1, 1),
     stop_words='english'
 )
 
@@ -124,8 +125,11 @@ print(f"Feature matrix shape: {X_train_vec.shape}")
 print("\nTraining models...")
 
 models = {
-    "Logistic Regression": LogisticRegression(max_iter=1000),
-    "Naive Bayes": MultinomialNB()
+    "Logistic Regression": LogisticRegression(
+        max_iter=1000,
+        solver='saga',
+        C=1.0
+    ),
 }
 
 best_model = None
